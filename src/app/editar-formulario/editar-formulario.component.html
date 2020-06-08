@@ -1,0 +1,25 @@
+<form [formGroup]='tecladoForm2'>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Marca</mat-label>
+        <input matInput placeholder="Redragon" type="text" formControlName="marcaEditada" >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Modelo</mat-label>
+        <input matInput placeholder="USAS K553 RGB" type="text" formControlName="modeloEditado">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Tipo de Mecanismo</mat-label>
+        <input matInput placeholder="Mecanico" type="text" formControlName="tipoMecanismoEditado">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Tipo de switch</mat-label>
+        <input matInput placeholder="Outemu" type="text" formControlName="tipoSwitchEditado">
+    </mat-form-field>  
+
+    Status Formulario: {{tecladoForm2.status}}
+    <button mat-raised-button type="button" >Guardar</button>
+</form>
