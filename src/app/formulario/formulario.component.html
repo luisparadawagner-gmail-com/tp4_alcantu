@@ -1,27 +1,32 @@
-<form [formGroup]='tecladoForm' (ngSubmit)=onSubmit()>
+<div *ngIf = "mostrarFormulario">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Marca</mat-label>
-        <input matInput placeholder="Redragon" type="text" formControlName="marca" >
-    </mat-form-field>
+    <form [formGroup]='tecladoForm' (ngSubmit)=submit()>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Modelo</mat-label>
-        <input matInput placeholder="USAS K553 RGB" type="text" formControlName="modelo">
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Marca</mat-label>
+            <input matInput placeholder="Redragon" type="text" formControlName="marca" >
+        </mat-form-field>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Tipo de Mecanismo</mat-label>
-        <input matInput placeholder="Mecanico" type="text" formControlName="tipoMecanismo">
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Modelo</mat-label>
+            <input matInput placeholder="USAS K553 RGB" type="text" formControlName="modelo">
+        </mat-form-field>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Tipo de switch</mat-label>
-        <input matInput placeholder="Outemu" type="text" formControlName="tipoSwitch">
-    </mat-form-field>  
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo de Mecanismo</mat-label>
+            <input matInput placeholder="Mecanico" type="text" formControlName="tipoMecanismo">
+        </mat-form-field>
 
-    Status Formulario: {{tecladoForm.status}}
-    <button mat-raised-button type="submit">Guardar</button>
-</form>
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo de switch</mat-label>
+            <input matInput placeholder="Outemu" type="text" formControlName="tipoSwitch">
+        </mat-form-field>  
 
-<app-editar-formulario [marcaE]="marca" [modeloE]="modelo" [tipoMecanismoE]="tipoMecanismo" [tipoSwitchE]="tipoSwitch" ></app-editar-formulario>
+        Status Formulario: {{tecladoForm.status}}
+        <button mat-raised-button >Guardar</button>
+    </form>
+</div>
+
+<div *ngIf = "mostrarEditarFormulario">
+    <app-editar-formulario [formulario] = "teclado"></app-editar-formulario>
+</div>

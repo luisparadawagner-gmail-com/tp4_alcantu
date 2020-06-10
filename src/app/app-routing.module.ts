@@ -7,14 +7,10 @@ import { TablaComponent } from './tabla/tabla.component';
 
 
 const routes: Routes = [
-  { path: 'formulario', component: FormularioComponent,
-    children: [
-      { 
-        path: 'editar-formulario', component: EditarFormularioComponent
-      }
-    ]
-  },
-  { path: 'tabla', component: TablaComponent },
+  { path: 'formulario', component: FormularioComponent},
+  { path: 'editar-formulario', component: EditarFormularioComponent},
+  { path: 'tabla', component: TablaComponent }
+  
   //{ path: '**', component: FormularioComponent }
 ];
 
