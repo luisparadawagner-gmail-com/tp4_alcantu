@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-export interface ListaTeclados {
+export interface Teclados {
   marca: string;
   modelo: string;
-  mecanismo: string;
-  switch: string;
+  tipoMecanismo: string;
+  tipoSwitch: string;
 }
-
-const TECLADO_DATA: ListaTeclados[] = [
-  {marca: 'Redragon', modelo: 'Hydrogen', mecanismo: 'Mecanico', switch: 'Ontemu'},
-  {marca: 'Redragon', modelo: 'Helium', mecanismo: 'Mecanico', switch: 'Ontemu'},
-  {marca: 'Redragon', modelo: 'Lithium', mecanismo: 'Membrana', switch: 'Ontemu'},
-  {marca: 'Redragon', modelo: 'Beryllium', mecanismo: 'Membrana', switch: 'Ontemu'},
-
-];
 
 @Component({
   selector: 'app-tabla',
@@ -21,13 +14,27 @@ const TECLADO_DATA: ListaTeclados[] = [
   styleUrls: ['./tabla.component.css']
 })
 export class TablaComponent implements OnInit {
-  displayedColumns: string[] = ['marca', 'modelo', 'mecanismo', 'switch', 'boton'];
-  dataSource = TECLADO_DATA;
 
-  constructor() { }
+  teclado: Teclados[] = [
+    {marca: 'Redragon', modelo: 'Hydrogen', tipoMecanismo: 'Mecanico', tipoSwitch: 'Ontemu'},
+    {marca: 'Redragon', modelo: 'Helium', tipoMecanismo: 'Mecanico', tipoSwitch: 'Ontemu'},
+    {marca: 'Redragon', modelo: 'Lithium', tipoMecanismo: 'Membrana', tipoSwitch: 'Ontemu'},
+    {marca: 'Redragon', modelo: 'Beryllium', tipoMecanismo: 'Membrana', tipoSwitch: 'Ontemu'}
+  ];
+
+  displayedColumns: string[] = ['marca', 'modelo', 'tipoMecanismo', 'tipoSwitch','editar' ];
+  dataSource = this.teclado;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+
   }
+
+  editar(element) {
+    debugger;
+    this.router.navigate(['/formulario', element])
+	}
 
 }
 

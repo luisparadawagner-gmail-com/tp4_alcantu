@@ -23,10 +23,10 @@
         </mat-form-field>  
 
         Status Formulario: {{tecladoForm.status}}
-        <button mat-raised-button >Guardar</button>
+        <button mat-raised-button>Guardar</button>
     </form>
 </div>
 
 <div *ngIf = "mostrarEditarFormulario">
-    <app-editar-formulario [formulario] = "teclado"></app-editar-formulario>
+    <app-editar-formulario [editar] = "teclado"></app-editar-formulario>
 </div>

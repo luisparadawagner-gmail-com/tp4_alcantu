@@ -1,34 +1,37 @@
+
+<button mat-button routerLink="/formulario" routerLinkActive="active">Crear Teclado</button>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Marca Column -->
     <ng-container matColumnDef="marca">
       <th mat-header-cell *matHeaderCellDef> Marca </th>
-      <td mat-cell *matCellDef="let teclado"> {{teclado.marca}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
     </ng-container>
   
     <!-- Modelo Column -->
     <ng-container matColumnDef="modelo">
       <th mat-header-cell *matHeaderCellDef> Modelo </th>
-      <td mat-cell *matCellDef="let teclado"> {{teclado.modelo}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
     </ng-container>
   
     <!-- Tipo de Mecanismo Column -->
-    <ng-container matColumnDef="mecanismo">
+    <ng-container matColumnDef="tipoMecanismo">
       <th mat-header-cell *matHeaderCellDef> Mecanismo </th>
-      <td mat-cell *matCellDef="let teclado"> {{teclado.mecanismo}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.tipoMecanismo}} </td>
     </ng-container>
   
     <!-- Tipo de Switch Column -->
-    <ng-container matColumnDef="switch">
+    <ng-container matColumnDef="tipoSwitch">
       <th mat-header-cell *matHeaderCellDef> Switch </th>
-      <td mat-cell *matCellDef="let teclado"> {{teclado.switch}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.tipoSwitch}} </td>
     </ng-container>
 
-    <!-- Boton Column -->
-    <ng-container matColumnDef="boton">
-      <th mat-header-cell *matHeaderCellDef> Boton </th>
-      <td mat-cell *matCellDef="let teclado" >
-           <button mat-button routerLink = "/editar-formulario" routerLinkActive = "active">Mostrar</button>
+    <!-- Editar Column -->
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef> Editar </th>
+      <td mat-cell *matCellDef="let element" >
+           <button mat-button (click)="editar(element)">Editar</button>
       </td>
     </ng-container>
   
